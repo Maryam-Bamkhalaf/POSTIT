@@ -1,0 +1,201 @@
+.center {
+  display: block;
+  margin: auto;
+}
+.button {
+  color: #2e2836;
+}
+.footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #f1eaee;
+  font-size: 15px;
+  color: #333;
+}
+.header {
+  display: flex;
+
+  align-items: center; /* Vertically align items */
+
+  padding: 20px;
+
+  background-color: #e8d2df;
+
+  margin-bottom: 20px;
+
+  font-size: 14pt;
+
+  justify-content: space-between;
+  /* Distributes space between elements */
+}
+
+.navbar-brand {
+  display: flex;
+
+  align-items: center; /* Vertically center the brand */
+}
+
+.nav {
+  display: flex; /* Ensures nav items are in a row */
+
+  align-items: center;
+  color: #000; /* Vertically center nav items */
+}
+
+.nav-item {
+  margin-left: 1rem; /* Adds space between nav items */
+}
+.sharePosts {
+  padding-top: 10px;
+
+  margin-right: 10px;
+
+  border-color: #522a27;
+
+  text-align: center;
+
+  display: flex; /* Use flexbox for layout */
+
+  align-items: center; /* Vertically center the items */
+}
+
+.postButton {
+  width: 150px;
+
+  display: flex; /* Use flexbox to control button content */
+
+  justify-content: center; /* Center content inside button */
+
+  align-items: center; /* Vertically center content */
+
+  margin-left: 10px;
+  color: blue; /* Space between buttons if there are multiple */
+}
+.postTime {
+  font-size: 10pt;
+
+  color: #504d4d;
+}
+.userImage {
+  width: 100px;
+
+  height: 100px;
+
+  border-radius: 50%;
+}
+
+.userInfos {
+  padding: 20px;
+
+  text-align: center;
+}
+.profile-container {
+  padding: 20px;
+  background-color: #f8f9fa; /* Light gray background */
+}
+
+/* Row Styling */
+.profile-row {
+  margin-top: 30px; /* Adds space above posts */
+  padding: 15px; /* Adds padding for inner spacing */
+  background-color: #f1f1f1; /* Light background to differentiate posts section */
+  border-radius: 8px;
+}
+
+/* User Section Styling */
+.user-section {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Section Styling */
+.form-section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.profile-form {
+  width: 100%;
+}
+
+.form-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.file-input {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-input {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.profile-row {
+  margin-bottom: 30px; /* Add space between profile and posts */
+}
+
+.posts-row {
+  margin-top: 20px; /* Adds some space above posts */
+}
+
+/* User Section Styling */
+.user-section {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Share Post Section Styling */
+.share-post-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+/* Posts Section Styling */
+.posts-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Ensures posts section is spaced well */
+}
+
+/* Optional Spacer Column (empty space) */
+.posts-row .col-md-3 {
+  display: none; /* Hide if not used */
+}
+.table-striped {
+  width: 100%; /* Ensures the table takes full width */
+  border-collapse: collapse; /* Merges borders between cells */
+  margin: 20px 0; /* Adds space above and below the table */
+  background-color: #fff; /* Ensures the table has a clean white background */
+  border: 1px solid #ddd; /* Light border for the table */
+  border-radius: 8px; /* Rounded corners for the table */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+}
