@@ -9,13 +9,13 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import fs from "fs";
 import path from "path";
+import * as ENV from "./config.js";
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 //Database connection
-const connectString =
-  "mongodb+srv://postITDb:post123@postitcluster.6rkwd.mongodb.net/postITDb?retryWrites=true&w=majority&appName=PostITCluster";
+const connectString = `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority&appName=${ENV.DB_APP_NAME}`;
 mongoose.connect(connectString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -76,7 +76,7 @@ app.get("/viewUser", async (req, res) => {});
 app.post("/Login", async (req, res) => {
   try {
     const { email, password } = req.body; //using destructuring
-    const user = await UserModel.findOne({ email:email });
+    const user = await UserModel.findOne({ email: email });
     if (!user) {
       return res.status(500).json({ error: "User not found." });
     }
@@ -208,7 +208,7 @@ app.put(
 
     try {
       // Search for the user that will be updated using the findOne method
-      const userToUpdate = await UserModel.findOne({ email:email });
+      const userToUpdate = await UserModel.findOne({ email: email });
 
       // Check if the user was found
       if (!userToUpdate) {
@@ -260,6 +260,7 @@ app.put(
   }
 );
 
-app.listen(3001, () => {
-  console.log("You are connected");
+const port = ENV.PORT || 3001;
+app.listen(port, () => {
+  console.log(`You are connected at port: ${port}`);
 });

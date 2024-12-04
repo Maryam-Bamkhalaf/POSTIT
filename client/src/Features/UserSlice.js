@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { UsersData } from "../Exampledata";
 import axios from "axios";
+import * as ENV from "../config";
 
 //onst initialState = { value: [] };
 //const initialState = { value: UsersData };
@@ -17,7 +18,7 @@ export const registerUser = createAsyncThunk(
   "users/registerUser",
   async (userData) => {
     try {
-      const response = await axios.post("http://localhost:3001/registerUser", {
+      const response = await axios.post(`${ENV.SERVER_URL}/registerUser`, {
         name: userData.name,
         email: userData.email,
         password: userData.password,
@@ -33,13 +34,12 @@ export const registerUser = createAsyncThunk(
 
 export const login = createAsyncThunk("users/login", async (userData) => {
   try {
-    const response = await axios.post("http://localhost:3001/login", {
+    const response = await axios.post(`${ENV.SERVER_URL}/login`, {
       email: userData.email,
       password: userData.password,
     });
     const user = response.data.user;
     return user;
-
   } catch (error) {
     const errorMessage = "Invalid credentials";
     alert(errorMessage);
@@ -49,7 +49,7 @@ export const login = createAsyncThunk("users/login", async (userData) => {
 
 export const logout = createAsyncThunk("/users/logout", async () => {
   try {
-    const response = await axios.post("http://localhost:3001/logout");
+    const response = await axios.post(`${ENV.SERVER_URL}/logout`);
   } catch (error) {
     console.log(error);
   }
@@ -67,7 +67,7 @@ export const updateUserProfile = createAsyncThunk(
       // Send a PUT request to the server to update the user profile
 
       const response = await axios.put(
-        `http://localhost:3001/updateUserProfile/${userData.email}`, // API endpoint for updating user profile
+        `${ENV.SERVER_URL}/updateUserProfile/${userData.email}`, // API endpoint for updating user profile
 
         {
           // Request payload with user data to be updated
