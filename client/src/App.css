@@ -199,3 +199,35 @@
   border-radius: 8px; /* Rounded corners for the table */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
 }
+/* Posts Row Styling */
+.posts-row {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  margin-top: 15px; /* Adds some space between the Share Post section and the Location + Posts */
+}
+
+/* Location Column Styling */
+.location-col {
+  padding-right: 15px; /* Adds space between location and posts */
+  background-color: #f4f4f4; /* Subtle background color to highlight location */
+  border-radius: 8px; /* Smooth corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for a slightly elevated effect */
+  padding: 15px; /* Adds padding for spacing within the Location box */
+  max-height: 500px; /* Ensures location area doesn't grow too large */
+  overflow-y: auto; /* Allows scrolling if content exceeds height */
+}
+
+/* Optional: Customize Location component for visual appeal */
+.location-col .location {
+  font-size: 16px;
+  color: #333; /* Dark text for readability */
+  font-weight: bold; /* Makes location title stand out */
+}
+
+/* Add some spacing between content inside posts */
+.posts-section {
+  padding-left: 15px; /* Adds spacing between the location and posts */
+  background-color: #ffffff; /* White background for contrast */
+  border-radius: 8px; /* Smooth corners for posts section */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect for the posts section */
+}

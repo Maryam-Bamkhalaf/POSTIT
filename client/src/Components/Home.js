@@ -21,21 +21,21 @@ const Home = () => {
     <>
       <Row>
         {/* User Section */}
-        <Col md={3} className="user-section">
+        <Col md={2} className="user-section">
           <User />
         </Col>
 
         {/* Share Post Section */}
-        <Col md={9} className="share-post-section">
+        <Col md={10} className="share-post-section">
           <SharePost />
         </Col>
       </Row>
-      <Row>
-        <Col md={1} className="posts-row">
+
+      <Row className="posts-row">
+        {/* Location and Posts in the same row */}
+        <Col md={2} className="location-col">
           <Location />
         </Col>
-      </Row>
-      <Row className="posts-row">
         <Col md={10} className="posts-section">
           <Posts />
         </Col>
