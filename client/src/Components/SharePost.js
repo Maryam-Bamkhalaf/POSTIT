@@ -52,7 +52,11 @@ const SharePost = () => {
             value={postMsg}
             onChange={(e) => setpostMsg(e.target.value)}
           />
-          <Button onClick={() => handlePost()} color="primary" className="postButton">
+          <Button
+            onClick={() => handlePost()}
+            color="primary"
+            className="postButton"
+          >
             PostIT
           </Button>
         </Col>
