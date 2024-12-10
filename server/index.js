@@ -262,11 +262,8 @@ app.put(
 app.get("/getUsers", async (req, res) => {
   try {
     // Fetch all users from the "UserModel" collection, sorted by name in descending order
-
     const users = await UserModel.find({}).sort({ name: 1 });
-
     const userPost = await UserModel.countDocuments({});
-
     res.send({ users: users, count: userPost });
   } catch (err) {
     console.error(err);

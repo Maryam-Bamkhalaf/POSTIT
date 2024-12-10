@@ -13,6 +13,7 @@ describe("About", () => {
 
     expect(aboutElement).toBeInTheDocument();
   });
+
   it("should have the image", () => {
     render(<About />);
 
@@ -20,6 +21,7 @@ describe("About", () => {
 
     expect(image).toHaveClass("userImage");
   });
+
   it("should have the text about", () => {
     render(<About />);
 

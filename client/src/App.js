@@ -7,6 +7,7 @@ import Profile from "./Components/Profile";
 import Register from "./Components/Register";
 import Logout from "./Components/Logout";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Manage from "./Components/Manage";
 import { Container, Row } from "reactstrap";
 import { useSelector } from "react-redux";
 import "./App.css";
@@ -29,7 +30,8 @@ const App = () => {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/register" element={<Register />}></Route>
-            <Route path="/Logout" element={<Logout/>}></Route>
+            <Route path="/Logout" element={<Logout />}></Route>
+            <Route path="/manage" element={<Manage />}></Route>
           </Routes>
         </Row>
         <Row>

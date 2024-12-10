@@ -2,7 +2,7 @@ import { Navbar, Nav, NavItem, NavLink } from "reactstrap";
 import logo from "../Images/logo-t.png";
 import { Link, useNavigate } from "react-router-dom";
 import Logout from "./Logout";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Features/UserSlice";
 import { FaHome, FaUserAlt, FaSignOutAlt } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
@@ -10,6 +10,8 @@ import { PiUserListDuotone } from "react-icons/pi";
 import { IoMdLogOut } from "react-icons/io";
 import "../App.css";
 const Header = () => {
+  const user = useSelector((state) => state.users.user);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handlelogout = async () => {
@@ -37,6 +39,14 @@ const Header = () => {
               Profile
             </Link>
           </NavItem>
+          {user.userType === "Admin" && (
+            <NavItem>
+              <Link to="/manage">
+                <CgProfile />
+                Manage
+              </Link>
+            </NavItem>
+          )}
 
           <NavItem>
             <Link onClick={handlelogout}>
