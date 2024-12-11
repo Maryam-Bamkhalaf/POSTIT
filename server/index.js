@@ -68,7 +68,27 @@ app.post("/registerUser", async (req, res) => {
   }
 });
 
-app.delete("/deleteUser", async (req, res) => {});
+app.delete("/deleteUser/:id/", async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const user = await UserModel.findByIdAndDelete(id);
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.status(200).json({ id: id, msg: "User deleted successfully" });
+  } catch (error) {
+    console.error(error);
+
+    res
+
+      .status(500)
+
+      .json({ error: "An error occurred while deleting the user" });
+  }
+});
 
 app.get("/viewUser", async (req, res) => {});
 
@@ -90,7 +110,29 @@ app.post("/Login", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+app.put(
+  "/updateUserProfile/:email/",
 
+  upload.single("profilePic"), // Middleware to handle single file upload
+
+  async (req, res) => {
+    const email = req.params.email;
+
+    const name = req.body.name;
+
+    const password = req.body.password;
+
+    const userType = req.body.userType;
+
+    try {
+      // Find the user by email in the database
+
+      const userToUpdate = await UserModel.findOne({ email: email });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  }
+);
 /*......API code LoginOut...........*/
 app.post("/logout", async (req, res) => {
   res.status(200).json({ message: "Logged out successfully" });
@@ -238,7 +280,12 @@ app.put(
       }
 
       // Update user's name
+
       userToUpdate.name = name;
+
+      //if there is a value of userType in the request assign the new value
+
+      if (userType) userToUpdate.userType = userType;
 
       // Hash the new password and update if it has changed
       if (password !== userToUpdate.password) {
@@ -263,8 +310,8 @@ app.get("/getUsers", async (req, res) => {
   try {
     // Fetch all users from the "UserModel" collection, sorted by name in descending order
     const users = await UserModel.find({}).sort({ name: 1 });
-    const userPost = await UserModel.countDocuments({});
-    res.send({ users: users, count: userPost });
+    const userCount = await UserModel.countDocuments({});
+    res.send({ users: users, count: userCount });
   } catch (err) {
     console.error(err);
 

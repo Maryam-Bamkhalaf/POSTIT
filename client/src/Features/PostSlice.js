@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import * as ENV from "../config.js";
-
 const initialState = {
   posts: [],
   comments: [],
@@ -58,7 +57,7 @@ export const savePost = createAsyncThunk("posts/savePost", async (postData) => {
 const postSlice = createSlice({
   name: "posts",
   initialState: initialState,
-  reducers: {},
+  reducers: { reset: () => initialState },
   extraReducers: (builder) => {
     builder
       .addCase(savePost.pending, (state) => {
@@ -110,3 +109,4 @@ const postSlice = createSlice({
 });
 
 export default postSlice.reducer;
+export const { reset } = postSlice.reducer;

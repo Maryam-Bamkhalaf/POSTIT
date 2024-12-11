@@ -11,6 +11,7 @@ import Manage from "./Components/Manage";
 import { Container, Row } from "reactstrap";
 import { useSelector } from "react-redux";
 import "./App.css";
+import ManageProfile from "./Components/ManageProfile";
 const App = () => {
   const email = useSelector((state) => state.users.user.email);
 
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/register" element={<Register />}></Route>
             <Route path="/Logout" element={<Logout />}></Route>
             <Route path="/manage" element={<Manage />}></Route>
+            <Route path="/manage" element={<ManageProfile />}></Route>
           </Routes>
         </Row>
         <Row>

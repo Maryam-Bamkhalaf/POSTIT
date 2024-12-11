@@ -47,6 +47,14 @@ const Header = () => {
               </Link>
             </NavItem>
           )}
+          {user.userType === "Admin" && (
+            <NavItem>
+              <Link to="/manageprofile">
+                <CgProfile />
+                ManageProfile
+              </Link>
+            </NavItem>
+          )}
 
           <NavItem>
             <Link onClick={handlelogout}>
